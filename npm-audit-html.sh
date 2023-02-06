@@ -36,7 +36,7 @@ function npm_audit_html() {
     result_file="npm_audit_result-$CI_JOB_ID"
     echo -e "\nDEBUG: Parsing JSON formatted result into HTML format.\n"
     # Base HTML report headings for findings
-    result_html="<html><h1>$package_name</h1><p>Analysis Date: $CI_JOB_STARTED_AT&nbsp;&nbsp;&nbsp;&nbsp;CI Job ID: <a href=\"$CI_JOB_URL\">$CI_JOB_ID<a></p><table border=1><thead><th>Name</th><th>Severity</th><th>Via</th><th>Range</th><th>Nodes</th><th>Fix available</th><th>Remarks</th></thead><tbody>"
+    result_html="<html><h1>$package_name</h1><p>Analysis Date: $(date)</p><table border=1><thead><th>Name</th><th>Severity</th><th>Via</th><th>Range</th><th>Nodes</th><th>Fix available</th><th>Remarks</th></thead><tbody>"
     # Parse the findings details into HTML
     while IFS= read -r result_line
     do
