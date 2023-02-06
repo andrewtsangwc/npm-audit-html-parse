@@ -111,6 +111,4 @@ cd -
 # Generate HTML report from npm audit result as pipeline artifact
 npm_audit_html
 
-# Exit the script with number of severe vulnerabilities (critical & high) to feed back the pipeline
-sev_vul=$(($(echo $npm_audit_json | jq '.metadata.vulnerabilities.critical | tonumber')+$(echo $npm_audit_json | jq '.metadata.vulnerabilities.high | tonumber')))
-exit $sev_vul
+exit 1
